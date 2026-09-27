@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="《商战帝国》隐私政策 — 说明我们如何获取、存储、使用、共享和保护您的个人信息，以及您如何管理自己的个人信息。">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="index, follow">
+<title>隐私政策 | 《商战帝国》</title>
+<style>
+  /* ============ 设计变量 ============ */
+  :root{
+    --brand:#00c2b3;
+    --brand-dark:#0f9b90;
+    --brand-soft:#e6faf8;
+    --brand-line:#a7ece5;
+    --text:#1f2937;
+    --text-soft:#4b5563;
+    --text-mute:#6b7280;
+    --bg:#ffffff;
+    --bg-alt:#f7f9fa;
+    --border:#e5e7eb;
+    --radius:12px;
+    --shadow:0 1px 2px rgba(16,24,40,.05), 0 8px 24px -12px rgba(16,24,40,.18);
+    --maxw:1140px;
+    --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Helvetica Neue",Arial,sans-serif;
+  }
+
+  /* ============ 基础 ============ */
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:92px;}
+  body{
+    margin:0;font-family:var(--font);font-size:16px;line-height:1.85;
+    color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--brand-dark);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  h1,h2,h3,h4{line-height:1.4;font-weight:700;color:#111827;}
+  h2{font-size:1.38rem;margin:0 0 .7em;}
+  h3{font-size:1.06rem;margin:1.7em 0 .5em;color:#1f2937;}
+  h4{font-size:.98rem;margin:1.3em 0 .4em;color:var(--text-soft);}
+  p{margin:0 0 1em;}
+  ul,ol{margin:0 0 1em;padding-left:1.35em;}
+  li{margin:.38em 0;}
+  strong{color:#111827;}
+  code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:.875em;background:var(--bg-alt);border:1px solid var(--border);
+    border-radius:6px;padding:.12em .4em;
+  }
+  :focus-visible{outline:2px solid var(--brand-dark);outline-offset:3px;border-radius:4px;}
+
+  /* ============ 顶栏 ============ */
+  .topbar{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);
+    backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .topbar-inner{
+    max-width:var(--maxw);margin:0 auto;padding:13px 24px;
+    display:flex;align-items:center;gap:16px;justify-content:space-between;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;color:#111827;font-size:1rem;}
+  .logo-mark{
+    width:30px;height:30px;border-radius:9px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--brand),#4f8dfd);
+    display:grid;place-items:center;color:#fff;font-size:15px;
+  }
+  .topbar-meta{font-size:.82rem;color:var(--text-mute);white-space:nowrap;}
+
+  /* ============ 页头 ============ */
+  .hero{
+    background:
+      radial-gradient(900px 300px at 10% -10%, #d8fbf7 0%, rgba(216,251,247,0) 65%),
+      radial-gradient(700px 280px at 94% 0%, #e4ecff 0%, rgba(228,236,255,0) 60%),
+      var(--bg-alt);
+    border-bottom:1px solid var(--border);
+  }
+  .hero-inner{max-width:var(--maxw);margin:0 auto;padding:52px 24px 38px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:7px;background:var(--brand-soft);
+    color:var(--brand-dark);border:1px solid var(--brand-line);border-radius:999px;
+    padding:5px 13px;font-size:.78rem;font-weight:600;letter-spacing:.02em;
+  }
+  .hero h1{font-size:clamp(1.8rem,4vw,2.5rem);margin:16px 0 8px;letter-spacing:-.02em;}
+  .hero .lede{font-size:1.03rem;color:var(--text-soft);max-width:64ch;margin:0 0 20px;}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.85rem;color:var(--text-mute);}
+  .meta-row b{color:var(--text-soft);font-weight:600;}
+
+  /* ============ 摘要 ============ */
+  .summary{
+    max-width:var(--maxw);margin:0 auto;padding:0 24px;
+  }
+  .summary-card{
+    border:1px solid var(--brand-line);background:linear-gradient(180deg,#f4fffd,#ffffff);
+    border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:24px 26px;margin:32px 0 0;
+  }
+  .summary-card h2{
+    font-size:1rem;margin:0 0 12px;display:flex;align-items:center;gap:8px;
+    letter-spacing:.01em;
+  }
+  .summary-card h2::before{
+    content:"";width:4px;height:16px;border-radius:2px;background:var(--brand);
+  }
+  .summary-card ol{margin:0;padding-left:1.3em;color:var(--text-soft);font-size:.95rem;}
+  .summary-card li{margin:.5em 0;}
+
+  /* ============ 布局 ============ */
+  .layout{
+    max-width:var(--maxw);margin:0 auto;padding:36px 24px 80px;
+    display:grid;grid-template-columns:250px minmax(0,1fr);gap:52px;align-items:start;
+  }
+
+  /* 目录 */
+  .toc{position:sticky;top:86px;font-size:.88rem;max-height:calc(100vh - 110px);overflow-y:auto;padding-right:4px;}
+  .toc h2{
+    font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--text-mute);margin:0 0 10px;font-weight:700;
+  }
+  .toc ol{list-style:none;margin:0;padding:0;}
+  .toc li{margin:0;}
+  .toc a{
+    display:block;padding:6px 12px;border-left:2px solid var(--border);
+    color:var(--text-soft);line-height:1.5;transition:.15s;
+  }
+  .toc a:hover{color:var(--brand-dark);background:var(--bg-alt);text-decoration:none;}
+  .toc a.active{
+    color:var(--brand-dark);border-left-color:var(--brand);
+    background:var(--brand-soft);font-weight:600;
+  }
+  .toc .group{
+    font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--text-mute);font-weight:700;margin:14px 0 6px;padding-left:12px;
+  }
+  .toc-note{
+    margin-top:18px;padding:12px 14px;background:var(--bg-alt);
+    border:1px solid var(--border);border-radius:var(--radius);
+    font-size:.79rem;color:var(--text-mute);line-height:1.7;
+  }
+
+  /* 正文 */
+  .content{min-width:0;}
+  .content section{
+    padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--border);
+    scroll-margin-top:92px;
+  }
+  .content section:last-of-type{border-bottom:0;margin-bottom:0;}
+  .sec-num{
+    display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 7px;
+    margin-right:10px;background:var(--brand-soft);color:var(--brand-dark);
+    border-radius:8px;font-size:.82rem;font-weight:700;vertical-align:2px;
+  }
+  .callout{
+    background:var(--bg-alt);border:1px solid var(--border);border-left:3px solid var(--brand);
+    border-radius:10px;padding:16px 18px;margin:0 0 1.2em;font-size:.95rem;color:var(--text-soft);
+  }
+  .callout p:last-child{margin-bottom:0;}
+  .callout.warn{border-left-color:#f59e0b;background:#fffbeb;border-color:#fde68a;color:#78500a;}
+  .callout.key{border-left-color:#e11d48;background:#fff1f4;border-color:#fbcfe0;color:#7f1d3a;}
+
+  table{
+    width:100%;border-collapse:collapse;margin:0 0 1.2em;font-size:.9rem;
+    display:block;overflow-x:auto;
+  }
+  th,td{padding:10px 13px;border:1px solid var(--border);text-align:left;vertical-align:top;}
+  th{background:var(--bg-alt);font-weight:600;color:#111827;white-space:nowrap;}
+  tbody tr:nth-child(even) td{background:#fcfdfd;}
+  td.nowrap{white-space:nowrap;}
+
+  /* 联系方式卡片 */
+  .contact-card{
+    border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:20px 22px;background:var(--bg);margin:0 0 1.2em;
+  }
+  .contact-card dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:.93rem;}
+  .contact-card dt{color:var(--text-mute);white-space:nowrap;}
+  .contact-card dd{margin:0;}
+
+  /* 附录标签 */
+  .appendix-tag{
+    display:inline-block;background:#111827;color:#fff;border-radius:6px;
+    font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:3px 9px;
+    margin-right:10px;vertical-align:3px;
+  }
+
+  /* ============ 页脚 ============ */
+  footer{border-top:1px solid var(--border);background:var(--bg-alt);}
+  .footer-inner{
+    max-width:var(--maxw);margin:0 auto;padding:30px 24px;
+    display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;justify-content:space-between;
+    font-size:.85rem;color:var(--text-mute);
+  }
+  .footer-links{display:flex;flex-wrap:wrap;gap:8px 20px;}
+  .footer-note{
+    max-width:var(--maxw);margin:0 auto;padding:0 24px 26px;
+    font-size:.78rem;color:var(--text-mute);line-height:1.7;
+  }
+
+  /* 回到顶部 */
+  #toTop{
+    position:fixed;right:22px;bottom:26px;z-index:60;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--border);background:#fff;color:var(--text-soft);
+    box-shadow:var(--shadow);cursor:pointer;font-size:18px;line-height:1;
+    display:grid;place-items:center;opacity:0;visibility:hidden;
+    transform:translateY(8px);transition:.25s;
+  }
+  #toTop.show{opacity:1;visibility:visible;transform:none;}
+  #toTop:hover{color:var(--brand-dark);border-color:var(--brand-line);}
+
+  /* ============ 响应式 ============ */
+  @media (max-width:980px){
+    .layout{grid-template-columns:1fr;gap:26px;padding-top:26px;}
+    .toc{
+      position:static;max-height:none;overflow:visible;border:1px solid var(--border);
+      border-radius:var(--radius);padding:16px 18px;background:var(--bg-alt);
+    }
+    .toc ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:2px;}
+    .toc a{border-left:0;border-radius:8px;padding:7px 10px;}
+    .toc a.active{background:var(--brand-soft);}
+    .toc .group{grid-column:1/-1;margin-top:10px;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .topbar-inner,.hero-inner,.layout,.footer-inner,.summary,.footer-note{padding-left:18px;padding-right:18px;}
+    .hero-inner{padding-top:36px;padding-bottom:28px;}
+    .topbar-meta{display:none;}
+    .summary-card{padding:18px 18px;margin-top:24px;}
+    .contact-card dl{grid-template-columns:1fr;gap:2px 0;}
+    .contact-card dd{margin-bottom:8px;}
+    #toTop{right:14px;bottom:16px;}
+  }
+
+  /* ============ 深色模式 ============ */
+  @media (prefers-color-scheme:dark){
+    :root{
+      --brand:#2dd4bf;--brand-dark:#5eead4;--brand-soft:#12312f;--brand-line:#1f4a46;
+      --text:#e5e7eb;--text-soft:#cbd5e1;--text-mute:#94a3b8;
+      --bg:#0f172a;--bg-alt:#131f36;--border:#1f2b45;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -14px rgba(0,0,0,.6);
+    }
+    h1,h2,h3,h4,strong{color:#f8fafc;}
+    h3{color:#e2e8f0;}
+    .topbar{background:rgba(15,23,42,.88);}
+    .logo{color:#f8fafc;}
+    .hero{background:radial-gradient(900px 300px at 10% -10%,#0f2f2c 0%,rgba(15,47,44,0) 65%),radial-gradient(700px 280px at 94% 0%,#1e293b 0%,rgba(30,41,59,0) 60%),var(--bg-alt);}
+    .summary-card{background:linear-gradient(180deg,#10201f,#0f172a);}
+    .callout.warn{background:#2a2113;border-color:#4d3d16;color:#fcd9a0;}
+    .callout.key{background:#2a1620;border-color:#5b2136;color:#fbcfe0;}
+    th{color:#f8fafc;}
+    tbody tr:nth-child(even) td{background:#111c31;}
+    #toTop{background:#131f36;}
+    #toTop:hover{border-color:var(--brand-line);}
+  }
+
+  /* ============ 打印 ============ */
+  @media print{
+    .topbar,.toc,#toTop,footer{display:none !important;}
+    body{font-size:11pt;line-height:1.6;color:#000;background:#fff;}
+    .hero{background:none;border-bottom:1px solid #999;}
+    .summary{padding:0;}
+    .summary-card{box-shadow:none;border:1px solid #bbb;margin-top:16px;}
+    .layout{display:block;padding:0;max-width:none;}
+    .content section{page-break-inside:avoid;border-bottom:1px solid #ddd;}
+    a{color:#000;text-decoration:none;}
+    .sec-num,.appendix-tag{background:#eee;color:#000;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 顶栏 ===== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark" aria-hidden="true">游</span>
+      <span>商战帝国</span>
+    </a>
+    <div class="topbar-meta">最近更新：<time datetime="2026-09-27">2026 年 9 月 27 日</time></div>
+  </div>
+</header>
+
+<!-- ===== 页头 ===== -->
+<div class="hero" id="top">
+  <div class="hero-inner">
+    <span class="badge">🔒 个人信息与隐私保护</span>
+    <h1>《商战帝国》隐私政策</h1>
+    <p class="lede">
+      欢迎您体验《商战帝国》！本游戏由童梦工作室（以下或称“我们”）开发并运营。我们非常重视您的个人信息与隐私保护，您的信赖对我们非常重要。
+      我们将按照法律法规要求以及业界成熟的安全标准，通过合理有效的方式保护您的个人信息。
+      本政策将帮助您了解我们在获取、存储、使用、管理及保护您的个人信息方面的措施。
+    </p>
+    <div class="meta-row">
+      <span><b>更新日期：</b><time datetime="2026-09-27">2026 年 9 月 27 日</time></span>
+      <span><b>生效日期：</b><time datetime="2026-09-27">2026 年 9 月 27 日</time></span>
+      <span><b>版本：</b>v1.0</span>
+      <span><b>适龄提示：</b>本游戏适合 8 周岁以上玩家使用</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 摘要 ===== -->
+<div class="summary">
+  <div class="summary-card">
+    <h2>本政策摘要</h2>
+    <p style="color:var(--text-soft);font-size:.95rem;margin-bottom:.9em;">
+      您在使用本游戏前请仔细阅读并充分理解本隐私政策，<strong>其中关于您个人信息权益的重要内容我们已用加粗形式提示</strong>，
+      请您在充分理解并同意后再开始使用。摘要如下：
+    </p>
+    <ol>
+      <li>我们会依据本隐私政策获取、使用您的个人信息，并逐一说明获取的个人信息类型及其对应的场景，以便您了解我们针对某一特定功能所获取的具体个人信息的类别、使用目的及获取方式。</li>
+      <li>当您使用某些特定功能或服务时，我们会在获得您的授权同意后，获取您的<strong>敏感个人信息</strong>或调用您的<strong>敏感权限</strong>。拒绝提供仅会使您无法使用相关特定功能或服务，并不影响您正常使用其他功能或服务。即使我们经过授权调用了您的敏感权限，也仅会在您的授权范围内、并在您使用特定功能或服务期间，依据本隐私政策获取您的相关信息。</li>
+      <li>如我们与合作伙伴共享您的个人信息，我们会直接征得或确认合作伙伴征得您对前述行为的明示同意，但法律法规另有规定或因保护用户权益或安全需要的除外。此外，我们还会对共享个人信息的行为进行安全监测与风险评估，并采用加密、去标识化等手段保障您的信息安全。</li>
+      <li>您可以通过本隐私政策所列途径及方式访问、修改、删除、复制您的个人信息，也可以使用撤回同意授权、注销账号、管理个性化推荐等隐私功能，以确保您实现对个人信息的控制权。</li>
+      <li>您可以通过本隐私政策“联系我们”章节所列的方式向我们提出建议或反馈，我们会在 15 个工作日内受理并处理完毕。</li>
+    </ol>
+    <p style="margin:1em 0 0;font-size:.92rem;color:var(--text-soft);">
+      您可以根据以下索引阅读相应章节，进一步了解更加详尽的信息：
+      <a href="#s1">1. 我们如何获取您的个人信息</a>　
+      <a href="#s2">2. 我们如何存储您的个人信息</a>　
+      <a href="#s3">3. 我们如何保护您的个人信息</a>　
+      <a href="#s4">4. 我们如何使用您的个人信息</a>　
+      <a href="#s5">5. 我们如何使用 Cookies 及相关技术</a>　
+      <a href="#s6">6. 合作方以及如何转移、披露个人信息</a>　
+      <a href="#s7">7. 您如何管理您的个人信息</a>　
+      <a href="#s8">8. 未成年人保护</a>　
+      <a href="#s9">9. 本政策如何更新</a>　
+      <a href="#s10">10. 适用范围</a>　
+      <a href="#s11">11. 联系我们</a>
+    </p>
+  </div>
+</div>
+
+<!-- ===== 主体 ===== -->
+<div class="layout">
+
+  <!-- 目录 -->
+  <aside class="toc" aria-label="目录">
+    <h2>目录</h2>
+    <nav>
+      <ol>
+        <li><a href="#s1">1. 我们如何获取您的个人信息</a></li>
+        <li><a href="#s2">2. 我们如何存储您的个人信息</a></li>
+        <li><a href="#s3">3. 我们如何保护您的个人信息</a></li>
+        <li><a href="#s4">4. 我们如何使用您的个人信息</a></li>
+        <li><a href="#s5">5. 我们如何使用 Cookies 及相关技术</a></li>
+        <li><a href="#s6">6. 合作方及转移、披露个人信息</a></li>
+        <li><a href="#s7">7. 您如何管理您的个人信息</a></li>
+        <li><a href="#s8">8. 未成年人保护</a></li>
+        <li><a href="#s9">9. 本政策如何更新</a></li>
+        <li><a href="#s10">10. 适用范围</a></li>
+        <li><a href="#s11">11. 联系我们</a></li>
+        <li class="group">附录</li>
+        <li><a href="#a1">附录一　应用权限清单</a></li>
+        <li><a href="#a2">附录二　第三方 SDK 说明</a></li>
+        <li><a href="#a3">附录三　个人信息收集清单</a></li>
+      </ol>
+    </nav>
+    <div class="toc-note">
+      本政策为《商战帝国》上线 TapTap 等渠道时提交的隐私政策。<strong>《附录一　应用权限清单》须与本游戏实际申请的权限完全一致</strong>，请在正式提交前核对完毕。
+    </div>
+  </aside>
+
+  <!-- 正文 -->
+  <main class="content">
+
+    <!-- 1 -->
+    <section id="s1">
+      <h2><span class="sec-num">1</span>我们如何获取您的个人信息</h2>
+      <p>
+        我们根据合法、正当、必要的原则，按照如下方式获取您在使用本游戏时主动提供或因使用服务而产生的信息，
+        用于向您提供游戏服务、优化游戏体验以及保障您的账号安全。
+      </p>
+
+      <h3>1.1 账号注册、登录及身份认证</h3>
+      <p>
+        当您使用本游戏时，您可以通过<strong>手机号码</strong>注册、登录游戏账号，此时我们会获取您的<strong>手机号码</strong>与验证码；
+        您也可以选择使用<strong>第三方平台账号（如 TapTap 账号、微信、QQ、Apple ID）</strong>快捷登录，
+        此时我们会在符合相关法律法规的前提下，根据您的授权获取该第三方平台账号的相关信息（如头像、昵称、OpenID、UnionID 等）。
+      </p>
+      <p>
+        为帮助您完成注册，我们还会获取您的游戏昵称、头像，以便为您提供初始游戏服务。您可以根据自身需求选择填写性别、生日、地区等信息。
+        如果您仅需以游客身份体验部分功能，您无需注册账号及提供上述信息。
+      </p>
+
+      <h3>1.2 实名认证与未成年人防沉迷</h3>
+      <div class="callout key">
+        <p>
+          <strong>重要提示：</strong>根据《中华人民共和国未成年人保护法》《关于进一步严格管理 切实防止未成年人沉迷网络游戏的通知》
+          等法律法规及主管部门要求，<strong>您在使用本游戏前必须完成实名认证</strong>。
+          我们会获取您主动提供的<strong>真实身份信息（包括真实姓名、身份证件号码）</strong>，
+          该信息属于<strong>敏感个人信息</strong>。如您拒绝提供，您将无法登录并游玩本游戏。
+        </p>
+      </div>
+      <p>实名认证信息仅用于下列目的：</p>
+      <ul>
+        <li>核验您的真实身份，落实网络游戏实名制要求；</li>
+        <li>识别未成年人身份，执行防沉迷限制（游玩时段、单次及累计时长限制）；</li>
+        <li>在您发生充值消费时，执行未成年人消费限额与退款核验；</li>
+        <li>依法律法规要求向主管部门或依法定程序提出的有权机关提供。</li>
+      </ul>
+      <p>
+        我们通过<strong>国家新闻出版署网络游戏防沉迷实名认证系统</strong>或具备合法资质的第三方认证服务机构完成核验。
+        认证完成后，我们<strong>仅存储加密后的认证结果标识用于校验，不会在本游戏服务器明文留存您的身份证件号码</strong>。
+      </p>
+
+      <h3>1.3 游戏内充值与消费</h3>
+      <p>
+        当您在本游戏内购买虚拟道具、礼包或进行充值时，我们会通过<strong>您所使用的应用分发渠道（如 TapTap、App Store）
+        或第三方支付机构</strong>获取您的<strong>下单账号信息、充值账号信息、交易时间、交易编号、交易标的名称与数量、
+        交易金额、支付方式、交易完成状态</strong>。上述信息用于保障您的交易安全、帮助您顺利完成交易、便于您查询订单信息、
+        使用售后及争议解决服务，同时还可能用于对虚拟物品进行版权保护与违规交易排查。
+      </p>
+      <p>
+        <strong>我们不会收集您的银行卡号、支付密码等支付账户敏感信息</strong>，该类信息由第三方支付机构在其页面内直接收集与处理。
+      </p>
+
+      <h3>1.4 游戏运行与基础功能</h3>
+      <p>
+        为保障游戏正常运行、适配您的设备并排查故障，我们会收集您的<strong>设备信息与日志信息</strong>，包括：
+        设备型号、设备品牌、操作系统版本、屏幕分辨率与刷新率、CPU 与 GPU 型号、内存与存储空间、
+        网络类型与运营商、IP 地址、设备标识符（如 AndroidID、OAID、IDFV、IDFA）、游戏崩溃日志与性能日志。
+      </p>
+      <p>
+        为保存您的游戏进度，我们会收集并存储您的<strong>游戏存档、角色信息、等级与战绩数据</strong>，
+        该类信息与您的游戏账号相关联。
+      </p>
+
+      <h3>1.5 社交与互动功能</h3>
+      <p>当您使用下列功能时，我们会在获得您的授权后获取相应信息：</p>
+      <table>
+        <thead>
+          <tr><th>功能场景</th><th>涉及权限／信息</th><th>使用目的</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>语音开黑、语音聊天</td><td>麦克风权限</td><td>实现游戏内实时语音交流，不会在后台录音</td></tr>
+          <tr><td>上传头像、分享战绩截图</td><td>相册／存储权限</td><td>读取您选定或保存的图片</td></tr>
+          <tr><td>扫码登录、AR 玩法</td><td>相机权限</td><td>识别二维码或实现增强现实玩法</td></tr>
+          <tr><td>好友推荐、同城排行</td><td>通讯录权限、位置权限</td><td>向您推荐可能认识的好友、展示地区排行</td></tr>
+          <tr><td>添加好友、聊天、战队</td><td>您主动填写的昵称、头像、聊天内容</td><td>实现社交互动功能</td></tr>
+          <tr><td>识别分享口令／邀请码</td><td>剪切板（仅本地读取）</td><td>实现跳转、分享、活动联动，<strong>我们不会将剪切板信息上传至服务器</strong></td></tr>
+        </tbody>
+      </table>
+      <p>
+        您可以在设备系统设置或游戏内【设置 → 隐私】中随时关闭上述权限。拒绝授权仅会使您无法使用对应功能，
+        不影响您正常游玩本游戏的其他内容。
+      </p>
+
+      <h3>1.6 客服、举报与申诉</h3>
+      <p>
+        当您通过游戏内客服系统或客服邮箱与我们联系、进行举报或申诉时，我们会收集您主动提供的
+        <strong>联系方式（手机号／邮箱）、沟通记录、问题描述及相关截图</strong>，
+        以便核实情况、定位问题并向您反馈处理结果。为保障双方合法权益，我们可能对客服沟通进行记录与留存。
+      </p>
+
+      <h3>1.7 第三方服务</h3>
+      <p>
+        <strong>本游戏目前未接入任何第三方 SDK</strong>，不存在第三方 SDK 通过本游戏客户端收集您的个人信息的情形。
+        详见本政策<a href="#a2">《附录二　第三方 SDK 说明》</a>。
+      </p>
+      <p>
+        您在游戏内可能使用的账号登录、实名认证、支付等功能，由您所使用的应用分发渠道（如 TapTap）在其自身服务中提供，
+        该等环节由渠道方依据其隐私政策独立处理您的个人信息。请您在使用前仔细阅读相应渠道的隐私政策。
+      </p>
+
+      <h3>1.8 例外情形</h3>
+      <p>请您知悉，根据相关法律法规及国家标准，以下情形中，我们获取、使用您的个人信息无需征求您的授权同意：</p>
+      <ol>
+        <li>为订立、履行您作为一方当事人的合同所必需；</li>
+        <li>为履行法定职责或者法定义务所必需；</li>
+        <li>为应对突发公共卫生事件，或者紧急情况下为保护自然人的生命健康和财产安全所必需；</li>
+        <li>为公共利益实施新闻报道、舆论监督等行为，在合理的范围内处理个人信息；</li>
+        <li>依照法律规定在合理的范围内处理个人自行公开或者其他已经合法公开的个人信息；</li>
+        <li>法律、行政法规规定的其他情形。</li>
+      </ol>
+
+      <h3>1.9 其他注意事项</h3>
+      <p>
+        本游戏的部分服务可能需要您提供特定的<strong>敏感个人信息（包括身份证件号码、交易信息、14 周岁以下（含）儿童的个人信息等）</strong>
+        来实现特定功能。若您选择不提供该类信息，则可能无法正常使用本游戏中的特定功能，但不影响您使用其他功能。
+        若您主动提供您的敏感个人信息，即表示您同意我们按本隐私政策所述目的和方式来处理您的敏感个人信息。
+      </p>
+      <p>
+        单独的设备相关信息、设备所在位置相关信息、软件使用记录信息是无法识别特定自然人身份的信息。如果我们将这类非个人信息与其他信息
+        结合用于识别特定自然人身份，或者将其与个人信息结合使用，则在结合使用期间，这类非个人信息将被视为个人信息，
+        除取得您授权或法律法规另有规定外，我们会将这类信息做匿名化、去标识化处理。
+      </p>
+      <p>
+        <strong>请您理解，我们向您提供的功能和服务是不断更新和发展的，如果某一功能或服务未在前述说明中且获取了您的信息，
+        我们将会通过页面提示、交互流程、游戏内公告等方式另行向您说明信息获取的内容、范围和目的，以征得您的同意。</strong>
+      </p>
+    </section>
+
+    <!-- 2 -->
+    <section id="s2">
+      <h2><span class="sec-num">2</span>我们如何存储您的个人信息</h2>
+
+      <h3>2.1 存储信息的地点</h3>
+      <p>
+        我们遵守中国法律的规定，将在中国境内获取的个人信息存储于中国境内。
+        如果您的个人信息存储地点需要从中国境内转移到境外的，我们将严格依照法律法规的要求执行，
+        并依法履行安全评估、取得您的单独同意等义务。
+      </p>
+
+      <h3>2.2 存储信息的期限</h3>
+      <p>
+        一般而言，我们仅在为实现目的所必需的最短时间内保留您的个人信息。但在下列情况下，我们有可能会调整个人信息的存储时间：
+      </p>
+      <ul>
+        <li>为遵守适用的法律法规等有关规定，或我们有理由确信需要遵守法律法规等有关规定；</li>
+        <li>为遵守法院判决、裁定或其他法律程序的规定；</li>
+        <li>为遵守相关政府机关或法定授权组织的要求；</li>
+        <li>为执行相关服务协议或本隐私政策，维护社会公共利益，为保护我们的客户、我们或我们的关联公司、其他用户或雇员的人身财产安全或其他合法权益所合理必需的用途。</li>
+      </ul>
+      <p>
+        在超出必要存储期限后，我们将依照法律法规的要求删除或匿名化处理您的个人信息。
+        当本游戏发生停止运营的情形时，我们将通过推送通知、游戏内公告等形式通知您，并在合理的期限内删除或匿名化处理您的个人信息。
+      </p>
+    </section>
+
+    <!-- 3 -->
+    <section id="s3">
+      <h2><span class="sec-num">3</span>我们如何保护您的个人信息</h2>
+      <p>
+        我们重视您的个人信息安全，我们会为您的信息安全提供可靠保障，以最大程度上防止您的信息丢失、被泄露、不当使用、
+        未经授权访问或披露、更改。为此，我们将采取合理的安全措施（主要包括技术方面和管理方面）来保护您的个人信息。
+      </p>
+      <ul>
+        <li>
+          <strong>技术措施</strong>
+          <ul>
+            <li>使用加密技术（如 TLS/SSL）以确保数据传输的保密性；</li>
+            <li>对您的实名认证信息、手机号码等敏感字段进行加密存储；</li>
+            <li>使用去标识化、匿名化等合理可行的手段保护您的个人信息；</li>
+            <li>使用受信赖的保护机制防止数据遭到恶意攻击。</li>
+          </ul>
+        </li>
+        <li>
+          <strong>管理措施</strong>
+          <ul>
+            <li>建立数据处理和访问制度，以防未经授权的人员访问我们的系统；</li>
+            <li>对员工进行安全教育与培训，签署保密协议，加强员工对于保护个人信息安全重要性的认识；</li>
+            <li>成立专门的数据安全部门，并制定个人信息安全事件的应急预案；</li>
+            <li>定期组织安全应急预案演练，预防此类安全事件发生；</li>
+            <li>若发生个人信息泄露等安全事件，我们会启动应急预案，阻止安全事件扩大，并通过推送通知、游戏内公告等形式告知您。</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        <strong>但请您理解，互联网并非绝对安全的环境，任何安全措施都无法做到无懈可击。我们建议您采取积极措施保护个人信息的安全，
+        包括但不限于使用复杂密码、定期修改密码、不将自己的账号密码等个人信息透露给他人等。</strong>
+      </p>
+    </section>
+
+    <!-- 4 -->
+    <section id="s4">
+      <h2><span class="sec-num">4</span>我们如何使用您的个人信息</h2>
+      <p>我们会严格依据法律法规及与您的约定将所获取的信息用于下列用途：</p>
+
+      <h3>4.1 向您提供服务</h3>
+      <p>
+        我们会向您提供基础游戏服务及您可以选择的附加服务。例如，我们会利用您的设备分配到的 IP 地址向您发送请求的数据与内容；
+        当我们的系统发生故障时，我们会记录和分析系统故障时产生的信息，优化我们的服务。我们提供的附加服务还可能涉及个性化服务，
+        如提供不同语言的切换、画质档位与操作设置等个性化偏好设定。
+      </p>
+      <p>
+        <strong>我们还可能为了改善本游戏产品或服务的合理需要，在符合相关法律法规的前提下，将通过某些服务所获取的信息用于
+        用户研究分析与统计、保护用户权益或游戏内反作弊治理等附加服务。</strong>
+        例如，为了维护公平的游戏环境，我们可能分析游戏内对战数据以识别作弊、外挂、代练、工作室等违规行为。
+      </p>
+
+      <h3>4.2 安全保障</h3>
+      <p>
+        为保护我们及用户的人身财产安全免遭侵害，更好地预防欺诈行为、滥用行为、安全风险和技术问题，更准确地识别违反法律法规
+        或本游戏相关协议的情况，我们将会利用信息来协助提升本游戏服务的安全性和可靠性。例如，我们会综合分析账号活动异常、
+        多端登录、流量异常等情形并采取合理措施，以保护您的账号安全，并对抗外挂、私服、盗号等行为。
+      </p>
+
+      <h3>4.3 与您沟通</h3>
+      <p>
+        我们会在某些场景下与您进行沟通。例如，当您向我们发起投诉、申诉或进行咨询时，我们会保存您与我们的沟通记录、
+        与您的需求相关的其他必要信息，以便解决您可能遇到的任何问题。为了提升您的体验，我们可能会向您发送与您相关的
+        或您可能感兴趣的游戏内容信息，例如新版本更新通知、活动通知。如您不希望接收此类信息，可按照短信中提示的方式
+        或通过游戏内设置关闭或退订。
+      </p>
+      <p>
+        <strong>若我们将您的个人信息用于本隐私政策未载明的其他用途，我们将在使用您的个人信息前，再次向您告知并征得您的明示同意。</strong>
+      </p>
+    </section>
+
+    <!-- 5 -->
+    <section id="s5">
+      <h2><span class="sec-num">5</span>我们如何使用 Cookies 及相关技术</h2>
+      <p>
+        为实现您的个性化需求，使您获得更轻松的访问体验，我们及我们的第三方合作伙伴会使用 Cookies、LocalStorage、SDK 及相关技术。
+        我们应用这些技术是为了简化您重复登录的步骤、存储您的游戏偏好，以便您进行偏好设置、帮助我们优化内容的呈现及其他相关服务，
+        为您带来更好的使用体验，同时便于我们判断您的登录状态以及账号或数据安全。
+      </p>
+      <p>
+        <strong>大多数浏览器及设备均为用户提供了清除浏览器缓存数据的功能，您可以在此进行相应的数据清除操作，或修改对 Cookies 的
+        接受程度或拒绝我们的 Cookies。请您知悉，这些修改操作可能会妨碍您正常使用依赖于相应 Cookies 的服务或功能。</strong>
+      </p>
+      <p>
+        除 Cookies 外，我们还会在游戏内或官方网站上使用网站信标或其他相关技术。网站信标是一种嵌入到网站中的电子图像，
+        我们使用该技术以实现计算用户访问数量、识别注册的用户，及通过得到的 Cookies 信息为您提供个性化服务。
+        对于非必要类 Cookies，我们会在您首次访问官方网站时通过弹窗征求您的同意。
+      </p>
+    </section>
+
+    <!-- 6 -->
+    <section id="s6">
+      <h2><span class="sec-num">6</span>我们在数据使用过程中涉及的合作方以及如何转移、披露个人信息</h2>
+
+      <h3>6.1 数据使用过程中涉及的合作方</h3>
+      <p>
+        <strong>我们重视对您个人信息的保护，对于您的个人信息，我们仅会在本隐私政策所述目的和范围内或根据法律法规要求收集和使用。</strong>
+        我们在与合作方合作过程中将遵循合法、正当、必要的原则：
+      </p>
+      <p>
+        <strong>6.1.1 委托处理。</strong>我们委托合作方处理您的个人信息的，我们将与合作方严格约定委托处理的目的、期限、处理方式、
+        个人信息的种类、保护措施以及双方的权利和义务，要求合作方按照我们的要求、本政策来处理个人信息。
+      </p>
+      <p>
+        <strong>6.1.2 共享。</strong>如我们与合作方共同决定您个人信息的处理目的和处理方式的，我们将与合作方约定各自的权利和义务，
+        确保在使用您的个人信息过程中遵守法律的相关规定、保护数据安全。
+      </p>
+      <p>
+        <strong>6.1.3 合作方范围。</strong>若具体功能和场景中涉及由我们的关联方、第三方提供服务，则合作方范围包括我们的关联方与第三方。
+        关于我们的合作伙伴收集个人信息类型、收集目的及其隐私政策，详情请参阅本政策
+        <a href="#a2">《附录二　第三方 SDK 说明》</a>。
+      </p>
+      <p><strong>6.1.4 合作的场景：</strong></p>
+      <ol>
+        <li>
+          <strong>使用渠道账号关联登录：</strong>当您使用 TapTap 账号或其他第三方账号登录本游戏时，经过您的同意，
+          我们将获取您在该渠道的昵称、头像、OpenID 及其他您授权的信息，用于创建并绑定您的游戏角色。
+        </li>
+        <li>
+          <strong>实名认证与防沉迷：</strong>为落实网络游戏实名制与防沉迷要求，我们可能会将您的<strong>真实姓名、身份证件号码</strong>
+          提供给依法设立的实名认证服务机构或主管部门认可的认证系统进行核验，或向<strong>国家新闻出版署网络游戏防沉迷实名认证系统</strong>报送。
+        </li>
+        <li>
+          <strong>使用支付功能：</strong>当您支付订单时，您可以选择与我们合作的第三方支付机构（如微信支付、支付宝、Apple 内购等）
+          或应用分发渠道所提供的服务进行支付。我们会将您的<strong>订单信息、对账信息及其他法律要求的必要信息</strong>与这些合作机构共享，
+          以确认您的支付指令并帮助您完成支付。
+        </li>
+        <li>
+          <strong>广告推广与统计分析：</strong>为提高广告有效触达率、帮助进行广告或推广建议，我们可能会与委托我们进行广告投放和信息推广的
+          合作伙伴或统计分析类合作伙伴共享经过去标识化处理的<strong>设备标识符、IP 地址或统计数据</strong>。合作方可能将上述信息与其合法
+          获取的其他数据相结合，以优化广告投放及/或推广效果，我们会要求其对信息的使用遵循合法、正当、必要原则，保障您的合法权利不受侵犯。
+        </li>
+        <li>
+          <strong>提供必要的合作服务：</strong>仅为实现本隐私政策中声明的目的，本游戏的某些服务将由业务合作伙伴提供。为保障为您提供的
+          服务顺利完成，我们可能会将您的个人信息共享给我们的合作伙伴，包括支付服务提供者、实名认证服务提供者、云服务提供者等。
+        </li>
+      </ol>
+
+      <h3>6.2 转移</h3>
+      <p>通常情况下，我们不会将您的个人信息转让给其他任何公司、组织和个人，但以下情况除外：</p>
+      <ul>
+        <li>事先获得您的明确同意或授权；</li>
+        <li>满足法律法规、法律程序的要求或强制性的政府要求或司法裁定；</li>
+        <li>在涉及合并、收购、资产转让或类似的交易时，如涉及到个人信息转让，我们会要求新的持有您个人信息的公司、组织以不低于本隐私政策
+          所要求的标准继续保护您的个人信息，否则，我们将要求该公司、组织重新向您征求授权同意。</li>
+      </ul>
+
+      <h3>6.3 披露</h3>
+      <p>我们不会主动公开您未自行公开的信息，除非遵循国家法律法规规定或者获得您的同意。</p>
+      <p>根据法律法规及国家标准，在下列情形中，我们共享、转让、公开披露您的个人信息无需征得您的授权同意：</p>
+      <ul>
+        <li>与国家安全、国防安全直接相关的；</li>
+        <li>与公共安全、公共卫生、重大公共利益直接相关的；</li>
+        <li>与犯罪侦查、起诉、审判和判决执行等直接相关的；</li>
+        <li>出于维护您或其他个人的生命、财产等重大合法权益但又很难得到本人同意的；</li>
+        <li>您自行向社会公众公开的个人信息；</li>
+        <li>从合法公开披露的信息中获取个人信息的，如合法的新闻报道、政府信息公开等渠道。</li>
+      </ul>
+      <p>
+        <strong>请您知悉，本游戏的很多功能都允许您与其他人分享您的相关信息（如战绩、排行榜、战队信息），并且您可以按照游戏内的设置
+        控制分享的方式或范围，请您谨慎处理。</strong>
+      </p>
+      <p>
+        <strong>请您知悉，根据法律规定，共享、转让、披露经去标识化处理的个人信息，且确保数据接收方无法复原并重新识别信息主体的，
+        不属于个人信息的对外共享、转让及公开披露行为，对此类数据的保存及处理将无需另行向您通知并征得您的同意。</strong>
+      </p>
+    </section>
+
+    <!-- 7 -->
+    <section id="s7">
+      <h2><span class="sec-num">7</span>您如何管理您的个人信息</h2>
+      <p>
+        <strong>我们非常重视您对个人信息的管理，并尽全力保护您对于个人信息的访问、修改、删除、复制、撤回同意授权、注销账号的相关权利，
+        使您有充分的能力保护您的个人信息安全。</strong>您管理个人信息的范围和方式将取决于您使用的具体服务，您可以通过如下方式管理您的个人信息：
+      </p>
+
+      <h3>7.1 访问个人信息</h3>
+      <p>进入游戏后，依次点击【主界面左上角头像】→【设置】→【账号与安全】→【个人信息】，即可查看您的账号资料与绑定信息。</p>
+
+      <h3>7.2 更改个人信息</h3>
+      <p>进入【设置】→【账号与安全】→【个人信息】，即可更改昵称／头像／个性签名等信息。</p>
+
+      <h3>7.3 删除个人信息</h3>
+      <ul>
+        <li><strong>删除聊天记录：</strong>进入【好友】→ 选择对应会话 → 点击右上角【…】→【删除会话】。</li>
+        <li><strong>删除个性签名等信息：</strong>进入【设置】→【账号与安全】→【个人信息】，清空对应内容。</li>
+        <li><strong>删除游戏动态／评价：</strong>进入【个人主页】→ 选择对应内容 → 点击【…】→【删除】。</li>
+      </ul>
+
+      <h3>7.4 导出个人信息</h3>
+      <p>进入【设置】→【隐私】→【个人信息收集清单】→ 点击【导出个人信息】，输入邮箱地址并提交，我们将在核验身份后向您发送。</p>
+
+      <h3>7.5 改变您授权同意的范围</h3>
+      <p>
+        进入【设置】→【隐私】→【系统权限设置】，可管理本游戏使用的系统权限；或通过设备系统设置（如 Android 的“应用权限”、
+        iOS 的“隐私与安全性”）随时关闭已授权权限。
+      </p>
+      <p>
+        <strong>当您选择撤回授权后，我们无法继续为您提供相应的部分服务。但您撤回授权的决定，不会影响此前基于您的授权而开展的个人信息处理。</strong>
+        特别提示：<strong>实名认证信息为法律法规要求的必填信息，撤回该授权将导致您无法继续使用本游戏。</strong>
+      </p>
+
+      <h3>7.6 管理个性化推荐功能</h3>
+      <p>进入【设置】→【隐私】→【内容推荐管理】／【广告推荐管理】，即可开启或关闭“个性化内容推荐”和“个性化广告推荐”。</p>
+
+      <h3>7.7 注销游戏账号</h3>
+      <p>进入【设置】→【账号与安全】→【永久注销账号】，按页面提示完成身份核验后提交注销申请。</p>
+      <div class="callout warn">
+        <p>
+          注销账号为不可逆操作。注销后您将无法登录本游戏，游戏角色、虚拟道具、等级战绩等数据将被删除或匿名化处理，
+          且无法恢复。<strong>当您注销账号后，我们将按照《中华人民共和国网络安全法》等法律法规的规定留存您的相关信息
+          （如网络日志不少于六个月）；超出法定保存期限后，我们将删除或匿名化处理您的个人信息。</strong>
+        </p>
+      </div>
+
+      <h3>7.8 响应您的请求</h3>
+      <p>
+        如您无法通过上述方式访问、更正、删除您的个人信息，或您发现我们违反法律、行政法规的规定或者双方的约定获取、使用您的个人信息，
+        或您发现我们获取、存储的您的个人信息有错误的，您均可以通过本隐私政策<a href="#s11">“联系我们”</a>章节列明的联系方式与我们联系解决。
+      </p>
+      <p>
+        <strong>为保障账号安全，在您提出上述请求时，我们可能会要求您进行身份验证。我们会在收到您的请求并验证您的用户身份后，
+        在 15 个工作日内受理并处理完毕。</strong>
+      </p>
+      <p>
+        <strong>请您理解，由于风俗习惯、公共利益、技术条件、法律监管的要求或限制，我们可能无法满足您的所有要求。</strong>
+      </p>
+    </section>
+
+    <!-- 8 -->
+    <section id="s8">
+      <h2><span class="sec-num">8</span>未成年人保护</h2>
+      <p>
+        我们非常重视未成年人的个人信息保护工作，并严格遵守国家关于防止未成年人沉迷网络游戏的各项要求。
+      </p>
+      <p>
+        <strong>若您是 18 周岁以下的未成年人，在使用本游戏前，应在您监护人的监护、指导下共同阅读并同意本隐私政策。</strong>
+        我们只会在法律允许、未成年人的监护人明确同意或保护未成年人所必要的情况下获取、存储、使用、共享、转让、披露未成年人的个人信息。
+        若您是未成年人的监护人，当您对您所监护的未成年人的个人信息有相关疑问时，请通过本隐私政策公示的联系方式与我们联系。
+      </p>
+
+      <h3>8.1 实名认证与防沉迷限制</h3>
+      <p>本游戏严格接入国家统一的防沉迷系统，并执行以下限制措施：</p>
+      <table>
+        <thead>
+          <tr><th>用户类型</th><th>游玩时段</th><th>游玩时长</th><th>充值限额</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>未满 8 周岁</td>
+            <td rowspan="3">仅可在周五、周六、周日及法定节假日<br>每日 20:00 — 21:00</td>
+            <td>每日累计不超过 1 小时</td>
+            <td>不可充值</td>
+          </tr>
+          <tr><td>8 周岁至未满 16 周岁</td><td>每日累计不超过 1 小时</td><td>单次 ≤ 50 元，每月 ≤ 200 元</td></tr>
+          <tr><td>16 周岁至未满 18 周岁</td><td>每日累计不超过 1 小时</td><td>单次 ≤ 100 元，每月 ≤ 400 元</td></tr>
+        </tbody>
+      </table>
+      <p>上述标准依据国家主管部门规定执行，如相关规定调整，本游戏将同步调整。</p>
+
+      <h3>8.2 儿童个人信息保护</h3>
+      <p>
+        <strong>若您是 14 周岁以下的儿童，在您使用本游戏前，请您通知您的监护人仔细阅读我们专门为您制定的《儿童个人信息保护规则》，
+        并取得您监护人对该规则的授权同意。</strong>若您是儿童的监护人，请您关注您所监护的儿童是否是在取得您的授权同意后使用本游戏。
+        如我们发现在未事先获得监护人同意的情况下收集了儿童个人信息，会尽快设法删除相关数据。
+      </p>
+
+      <h3>8.3 家长监护与青少年模式</h3>
+      <p>
+        我们提供家长监护功能。监护人可通过客服渠道申请开启家长监护，对未成年人的游玩时段、时长及消费进行管理。
+        如本游戏提供青少年模式，开启后我们将对游戏内容与功能进行筛选，并自动开启时间锁功能。
+      </p>
+    </section>
+
+    <!-- 9 -->
+    <section id="s9">
+      <h2><span class="sec-num">9</span>本政策如何更新</h2>
+      <p>
+        为了给您提供更好的服务，我们可能会根据本游戏产品或服务的更新情况及法律法规的相关要求适时更新本隐私政策。
+      </p>
+      <p>
+        <strong>但未经您明确同意，我们不会削减您依据当前生效的本隐私政策所应享有的权利。</strong>
+        如该等更新会导致您在本隐私政策项下权利的实质减损，我们将在本隐私政策生效前，通过游戏内弹窗、页面显著位置提示、
+        向您发送电子邮件等方式通知您，以便您及时了解本隐私政策的最新内容。
+        <strong>若您继续使用本游戏的服务，即表示您充分阅读、理解并同意受更新后的隐私政策约束。</strong>
+      </p>
+      <p>本政策的历史版本我们将予以留存，您可通过本政策页面查阅或联系我们获取。</p>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+      <h2><span class="sec-num">10</span>适用范围</h2>
+      <p>
+        本隐私政策适用于童梦工作室开发并运营的《商战帝国》相关产品与服务，包括但不限于本游戏客户端、
+        官方网站及我们后续可能推出的其他形态服务。但如该产品或服务设有特定的隐私政策，该特定的隐私政策将优先适用。
+      </p>
+      <p><strong>请您注意，本隐私政策不适用于：</strong></p>
+      <ul>
+        <li>
+          本游戏产品或服务中包含的或链接至第三方提供的产品或服务（例如跳转的第三方活动页面、外部链接），
+          这些产品或服务由第三方负责运营，您使用该产品或服务适用第三方隐私政策（而非本隐私政策），
+          您需要仔细阅读第三方向您展示的隐私政策，并妥善保管和谨慎提供您的个人信息。
+        </li>
+        <li>非我们向您提供的产品或服务。例如，您通过应用分发渠道（如 TapTap 商店、App Store）下载本游戏时，
+          该渠道自身对您信息的处理适用该渠道的隐私政策。</li>
+      </ul>
+    </section>
+
+    <!-- 11 -->
+    <section id="s11">
+      <h2><span class="sec-num">11</span>联系我们</h2>
+      <p>如您对本隐私政策的内容及相关事宜有任何疑问、意见或建议，您可以通过以下方式与我们联系。</p>
+      <div class="contact-card">
+        <dl>
+          <dt>运营主体</dt><dd>童梦工作室</dd>
+          <dt>个人信息保护负责人</dt><dd>童梦工作室 · 个人信息保护负责人</dd>
+          <dt>联系邮箱</dt><dd><a href="mailto:610113195@qq.com">610113195@qq.com</a></dd>
+          <dt>联系地址</dt><dd>本工作室暂无固定经营场所，请通过上述邮箱与我们联系</dd>
+        </dl>
+      </div>
+      <p>
+        我们将在 15 个工作日内受理并处理完毕；法律法规对处理时限另有规定的，从其规定。
+        若您对答复不满意，还可以向当地网信、市场监管等履行个人信息保护职责的部门投诉举报，或向有管辖权的人民法院提起诉讼。
+      </p>
+    </section>
+
+    <!-- 附录一 -->
+    <section id="a1">
+      <h2><span class="appendix-tag">附录一</span>应用权限清单</h2>
+      <p>
+        本游戏在实现特定功能时可能向您申请以下系统权限。我们会在您首次触发相关功能时向您申请，
+        您也可以随时在设备系统设置中开启或关闭。关闭权限仅影响对应功能，不影响其他功能的正常使用。
+      </p>
+      <table>
+        <thead>
+          <tr><th>系统权限</th><th>对应功能</th><th>申请时机</th><th>能否关闭</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>网络访问</td><td>连接游戏服务器、下载更新资源</td><td>启动游戏时</td><td class="nowrap">可关闭（将无法游戏）</td></tr>
+          <tr><td>存储／相册</td><td>下载游戏资源、保存与上传截图</td><td>使用相关功能时</td><td>可关闭</td></tr>
+          <tr><td>麦克风</td><td>游戏内语音聊天、语音开黑</td><td>首次使用语音时</td><td>可关闭</td></tr>
+          <tr><td>相机</td><td>扫码登录、AR 玩法、拍照分享</td><td>首次使用相机时</td><td>可关闭</td></tr>
+          <tr><td>位置信息</td><td>地区排行、同城好友推荐</td><td>首次使用定位功能时</td><td>可关闭</td></tr>
+          <tr><td>通讯录</td><td>查找并邀请好友</td><td>首次使用好友推荐时</td><td>可关闭</td></tr>
+          <tr><td>设备信息／电话状态</td><td>设备适配、反作弊、账号安全风控</td><td>启动游戏时</td><td>可关闭（可能影响风控）</td></tr>
+          <tr><td>通知</td><td>推送活动、版本更新、好友消息</td><td>首次需要推送时</td><td>可关闭</td></tr>
+          <tr><td>悬浮窗</td><td>游戏内助手、录屏工具</td><td>首次使用该功能时</td><td>可关闭</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.88rem;color:var(--text-mute);">
+        注：<strong>本表须与本游戏实际申请的权限完全一致</strong>，请勿列明游戏未实际申请的权限，也不要遗漏已申请的权限。
+      </p>
+    </section>
+
+    <!-- 附录二 -->
+    <section id="a2">
+      <h2><span class="appendix-tag">附录二</span>第三方 SDK 说明</h2>
+      <div class="callout">
+        <p><strong>本游戏目前未接入任何第三方 SDK。</strong></p>
+      </div>
+      <p>
+        我们未在本游戏中集成由第三方主体提供的 SDK，因此不存在第三方 SDK 通过本游戏客户端直接收集您的个人信息的情形。
+        您在游戏内可能使用的账号登录、实名认证、支付等功能，由您所使用的应用分发渠道（如 TapTap）在其自身服务中提供，
+        该等环节的信息处理由渠道方依据其隐私政策独立完成，不通过本游戏客户端内的第三方 SDK 进行。
+      </p>
+      <p>
+        <strong>如本游戏后续新增接入第三方 SDK，我们将及时更新本政策，逐项列明 SDK 名称、提供方、使用目的与收集的个人信息类型，
+        并通过游戏内公告等方式另行告知您，在必要时重新征得您的同意。</strong>
+      </p>
+    </section>
+
+    <!-- 附录三 -->
+    <section id="a3">
+      <h2><span class="appendix-tag">附录三</span>个人信息收集清单</h2>
+      <table>
+        <thead>
+          <tr><th>信息类型</th><th>收集场景</th><th>收集目的</th><th>是否敏感</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>手机号码</td><td>注册、登录、找回账号、客服联系</td><td>账号创建与安全验证</td><td>是</td></tr>
+          <tr><td>真实姓名、身份证件号码</td><td>实名认证与防沉迷</td><td>落实网络实名制与防沉迷法规要求</td><td class="nowrap">是（敏感个人信息）</td></tr>
+          <tr><td>昵称、头像、性别、生日、地区</td><td>注册、完善资料</td><td>展示游戏身份、社交互动</td><td>否</td></tr>
+          <tr><td>设备信息与设备标识符</td><td>启动游戏、运行游戏</td><td>设备适配、反作弊、安全风控</td><td>否</td></tr>
+          <tr><td>日志与性能数据</td><td>游戏运行过程中</td><td>故障排查、性能优化</td><td>否</td></tr>
+          <tr><td>游戏存档、角色、战绩数据</td><td>游戏过程中</td><td>保存进度、排行榜展示</td><td>否</td></tr>
+          <tr><td>订单与交易信息</td><td>游戏内充值消费</td><td>完成交易、售后与争议解决</td><td>是</td></tr>
+          <tr><td>聊天内容、语音信息</td><td>好友聊天、语音开黑</td><td>实现社交互动功能</td><td>是</td></tr>
+          <tr><td>相册／相机内容</td><td>上传头像、分享截图、扫码</td><td>实现图片相关功能</td><td>是</td></tr>
+          <tr><td>位置信息</td><td>地区排行、同城好友</td><td>按地区提供服务与推荐</td><td class="nowrap">是（敏感个人信息）</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:.88rem;color:var(--text-mute);">
+        注：本清单为便于您快速了解我们收集信息情况的汇总，具体处理规则以本政策正文各章节为准。
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="footer-inner">
+    <span>© <span id="year">2026</span> 童梦工作室 保留所有权利。</span>
+    <nav class="footer-links" aria-label="页脚导航">
+      <a href="#s1">隐私政策</a>
+      <a href="/terms">用户协议</a>
+      <a href="/children-privacy">儿童个人信息保护规则</a>
+      <a href="#s11">联系我们</a>
+    </nav>
+  </div>
+  <div class="footer-note">
+    适龄提示：本游戏适合 8 周岁以上玩家使用　|　抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。
+    适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。
+  </div>
+</footer>
+
+<button id="toTop" type="button" title="回到顶部" aria-label="回到顶部">↑</button>
+
+<script>
+(function () {
+  // 年份自动更新
+  var y = document.getElementById('year');
+  if (y) { y.textContent = new Date().getFullYear(); }
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  var onScroll = function () { toTop.classList.toggle('show', window.scrollY > 400); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // 目录滚动高亮
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var sections = links
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var visible = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { visible.add(e.target.id); }
+        else { visible.delete(e.target.id); }
+      });
+      var currentId = null;
+      for (var i = 0; i < sections.length; i++) {
+        if (visible.has(sections[i].id)) { currentId = sections[i].id; break; }
+      }
+      if (!currentId) { return; }
+      links.forEach(function (a) {
+        var active = a.getAttribute('href') === '#' + currentId;
+        a.classList.toggle('active', active);
+        if (active) { a.setAttribute('aria-current', 'true'); }
+        else { a.removeAttribute('aria-current'); }
+      });
+    }, { rootMargin: '-92px 0px -65% 0px', threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
